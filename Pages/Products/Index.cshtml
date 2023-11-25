@@ -1,0 +1,45 @@
+﻿@page
+@model FirstWebApp.Pages.Products.IndexModel
+@{
+    ViewData["Title"] = "My Product";
+
+}
+<div class="container p-3">
+  <div class="row pt-4">
+    <div class="col-6">
+      <h2 class="text-primary">Product List</h2>
+    </div>
+    <div class="col-6 text-end">
+      <a asp-page="create" class="btn btn-primary">
+        <i class="bi bi-plus-square"></i> &nbsp;Create New Product
+      </a>
+    </div>
+  </div>
+
+  <br /><br />
+
+  <table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+      <tr>
+        <th>
+          Product Name
+        </th>
+        <th>
+          Product Description
+        </th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      @foreach(var obj in Model.MyProducts)
+      {
+        <tr>
+          <td width="50%">@obj.ProductName</td>
+          <td width="30%">@obj.ProductDescription</td>
+        </tr>
+      }
+      
+    </tbody>
+  </table>
+
+</div>
